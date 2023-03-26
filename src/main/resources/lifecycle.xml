@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!--to enable all annotation-->
+<context:annotation-config/>
+  
+    <!--using the xml for lifecycle method-->
+    <bean class="com.springcore.lifecycle.Samosa" name="s1" init-method="init" destroy-method="destroy">
+        <property name="price" value="20"/>
+    </bean>
+    <!--using java interfaces for lifecycle method-->
+    <bean class="com.springcore.lifecycle.Pepsi" name="p1">
+        <property name="price" value="80"/>
+    </bean>
+    <bean class="com.springcore.lifecycle.Example" name="example">
+        <property name="subject" value="Maths"/>
+    </bean>
+</beans>
